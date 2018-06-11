@@ -65,7 +65,7 @@
 #include "app_uart.h"
 #include "app_util_platform.h"
 #include "app_pwm.h"
-
+#include "nrf_drv_adc.h"
 
 
 #include "bsp.h"
@@ -1014,14 +1014,16 @@ int main(void)
 		//test_LED_init();
 	  //buzzer_HB_control(5);
 	  //LEDS_PWM_init();
-	
-	  init_temp_p_data();
-	  init_micro_LEDs();
+	  
 
+  	init_temp_p_data();
+	  init_micro_LEDs();
+	  init_light_sensors();
+
+	
 	  init_microbit_sensors();
 	  //init_finch_LED();
 		//init_HM_LEDS();
-	  
 		SPI_init();  
 		//Send Initial 
 		check_update_name();
